@@ -42,7 +42,7 @@ Vue.component('vue-week', {
             year:new Date().getFullYear(),
             month:new Date().getMonth()+1,
             panelDate: new Date(),
-            userSelected:[27,30],
+            userSelected:[],
             currentValue:'',
             count:0,
             isActive:false
@@ -54,26 +54,26 @@ Vue.component('vue-week', {
     methods:{
         //点击选中周
         selectedDate(data){
-            this.count++;
             data[1].class.dateSelected=true;
             let firtDate=data[0].date<10?0+data[0].date:data[0].date;
             let year=data[0].year;
             let week=data[0].date<10?'0'+data[0].date:data[0].date;
-            if(this.count<2){
+            if(this.count<=1){
                 Vue.set(this.userSelected,this.count,{
                     year:year,
                     week:week,
                 })
+                if(this.count==1){
+                    this.$emit('modelChange',timeArr(this.userSelected));
+                    this.isActive=false;
+                }
             }else {
                 this.userSelected.shift();
                 this.userSelected.push({
                     year:year,
                     week:week,
                 });
-                if(this.count==2){
-                    this.$emit('modelChange',timeArr(this.userSelected));
-                    this.isActive=false;
-                }
+
 
             }
             for(let item of this.dateArr){
@@ -87,7 +87,7 @@ Vue.component('vue-week', {
 
             }
             this.currentValue=timeDel(this.userSelected);
-
+            this.count++;
         },
         //传入默认日期
         getDefaultDate(){
@@ -227,13 +227,14 @@ Vue.component('vue-week', {
         if(this.userSelected.length==0){
             this.getDate(new Date().getFullYear(),new Date().getMonth(),new Date().getDate());
         }else {
-            this.userSelected=this.value;
+
+
             this.getDefaultDate();
         }
 
     },
     created(){
-
+        this.userSelected=this.value;
     }
 
 });
