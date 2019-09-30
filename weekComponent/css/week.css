@@ -1,0 +1,90 @@
+.weekpanel{
+    width: 300px;
+    border: 1px solid #b9aa9c;
+    margin-top: 5px;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+.inputStyle{
+    height: 20px;
+    font-size:13px;
+    width: 210px;
+    border-radius: 4px;
+    outline-color: invert ;
+    outline-style: none ;
+    outline-width: 0px ;
+    border: none;
+}
+.inputContainer{
+    border: 1px solid #b9aa9c;
+    border-radius: 4px;
+    width: 220px;
+    display: flex;
+    height: 22px;
+}
+.YearDispaly{
+    height: 40px;
+    border-bottom: 1px solid #e4d9cf;
+    display:flex;
+    justify-content: center;
+    line-height: 40px;
+    font-size: 15px;
+    color: #786b57;
+    justify-content: space-around;
+}
+.weekContaner{
+    display: flex;
+    justify-content: space-around;
+}
+.weekText{
+    color: #c3cbd6;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+.dateContainer{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 5px;
+}
+.currentMonth{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 15px;
+}
+.nextMonth{
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+     color: #c3cbd6;
+    text-align: center;
+}
+.lastMonth{
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+    color: #c3cbd6;
+    text-align: center;
+}
+.week{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 15px;
+    color: #e2ca23;
+
+}
+.dateSelected{
+    background-color: #ebe2d3;
+}
+.changeMonthIcon{
+    width: 30px;
+    text-align: center;
+}
